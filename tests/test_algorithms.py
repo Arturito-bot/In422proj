@@ -37,9 +37,9 @@ class TestSchedulingAlgorithms(unittest.TestCase):
 
     def test_earliest_deadline_first(self):
         edf = EarliestDeadlineFirst()
-        # Pour EDF, on utilise uniquement les paramètres deadline
+        # Ajouter des tâches avec des deadlines
         for task in self.tasks:
-            edf.add_task({'name': task['name'], 'deadline': task['deadline']})
+            edf.add_task({'name': task['name'], 'deadline': task['deadline'], 'duration': task['duration']})
 
         scheduled_tasks = edf.schedule()
 
